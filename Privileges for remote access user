@@ -1,0 +1,17 @@
+Login as root in command line and then:
+Type command: grant all privileges on *.* to 'username'@"%" identified by "password";
+
+Type command: flush privileges;   * refresh*
+
+Type command: use mysql;
+
+Type command: update db set host = '%' where user = 'username'; （if you type host=localhost, the user will not have the privilege to let other visit your database）
+
+Type command: flush privileges;
+
+Type command: grant all privileges on *.* to 'myuser'@'%' identified by 'mypassword' with grant option;
+
+Hints:
+Format：grant <privilege> on <database name>.<table name> to <username>@<host name> identified by <password>;
+
+            
